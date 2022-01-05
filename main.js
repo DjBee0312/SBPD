@@ -21,6 +21,7 @@ if (isValidDate(oldDate) || Math.abs(currentDate.getTime() - oldDate.getTime()) 
     key = new NodeRSA(keyData);
 }
 else{
+    console.log('Generating new key');
     fs.writeFileSync('./time.txt',currentDate.toString());
     //Key length (For my variant 80 bit)
     //But with key = 80 bit RSA sends error : "data too large for key size"
@@ -37,7 +38,7 @@ function isValidDate(d) {
 
 //Text for encryption (4 bytes)
 // In js => 1 symbol = 2 bytes
-const text = 'xx';
+const text = 'gg';
 console.log('base text: ', text);
 
 //Encryption process
